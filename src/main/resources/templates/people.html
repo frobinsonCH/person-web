@@ -1,0 +1,39 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+            <title>People-Test</title>
+    </head>
+    <body>
+        <header>
+            <h1>This is where we keep the people</h1>
+        </header>
+        <main>
+            <p>
+                This is where the details of the people will be
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Forename(s)</th>
+                        <th>Surname</th>
+                        <th>House Num or Name</th>
+                        <th>Street</th>
+                        <th>Postcode</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="person: ${people}">
+                        <td th:text="${person.forename}" />
+                        <td th:text="${person.surname}" />
+                        <td th:text="${person.address.houseNum}" />
+                        <td th:text="${person.address.street}" />
+                        <td th:text="${person.address.postcode}" />
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+
+    </body>
+
+
+</html>

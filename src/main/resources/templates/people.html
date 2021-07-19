@@ -1,16 +1,14 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
     <head>
+        <link th:href="@{/css/styles.css}" rel="stylesheet"/>
             <title>People-Test</title>
     </head>
     <body>
         <header th:replace="fragments/header">
 
         </header>
-        <div class="topnav">
-            <a class="active" href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+        <div th:replace="fragments/navbar">
+
         </div>
         <main>
             <p>
@@ -19,6 +17,7 @@
             <table>
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Forename(s)</th>
                         <th>Surname</th>
                         <th>House Num or Name</th>
@@ -28,11 +27,12 @@
                 </thead>
                 <tbody>
                     <tr th:each="person: ${people}">
-                        <td th:text="${person.forename}" />
-                        <td th:text="${person.surname}" />
-                        <td th:text="${person.address.houseNum}" />
-                        <td th:text="${person.address.street}" />
-                        <td th:text="${person.address.postcode}" />
+                        <td th:text="${person?.id}" />
+                        <td th:text="${person?.forename}" />
+                        <td th:text="${person?.surname}" />
+                        <td th:text="${person?.address?.houseNum}" />
+                        <td th:text="${person?.address?.street}" />
+                        <td th:text="${person?.address?.postcode}" />
                     </tr>
                 </tbody>
             </table>

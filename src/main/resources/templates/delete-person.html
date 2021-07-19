@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>People-Test</title>
+</head>
+<body>
+<header th:replace="fragments/header">
+
+</header>
+<div th:replace="fragments/navbar">
+
+</div>
+<main>
+    <form action="#" th:action="@{/delete-person}"  method="post">
+        <p>id: <input type="text" th:value="${id}" /></p>
+        <p><input type="submit" value="Submit" />
+    </form>
+
+</main>
+<footer th:replace="fragments/footer">
+
+</footer>
+
+
+</body>
+
+
+</html>

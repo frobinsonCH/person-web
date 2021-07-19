@@ -1,0 +1,28 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>People-Test</title>
+</head>
+<body>
+<header th:replace="fragments/header">
+
+</header>
+<div th:replace="fragments/navbar">
+
+</div>
+<main>
+    <form action="#" th:action="@{/add-person}" th:object="${person}" method="post">
+        <p>forename: <input type="text" th:field="*{forename}" /></p>
+        <p>surname: <input type="text" th:field="*{surname}" /></p>
+        <p><input type="submit" value="Submit" /> <input type="reset" value="Reset" /></p>
+    </form>
+
+</main>
+<footer th:replace="fragments/footer">
+
+</footer>
+
+
+</body>
+
+
+</html>

@@ -1,6 +1,7 @@
 package uk.gov.companieshouse.personweb.personweb.model;
 import java.time.LocalDate;
 public class Person {
+    private String id;
     private String title;
     private String forename;
     private String surname;
@@ -11,8 +12,9 @@ public class Person {
     private String occupation;
     private Address address;
     public Person(){}
-    public Person(String title, String forename, String surname, String formerName,
+    public Person(String id,String title, String forename, String surname, String formerName,
                   String country,String nationality, LocalDate dob, String occupation,Address address){
+        this.id=id;
         this.title= title;
         this.forename = forename;
         this.surname = surname;
@@ -23,6 +25,15 @@ public class Person {
         this.occupation = occupation;
         this.address = address;
     }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getTitle() {
         return title;
     }

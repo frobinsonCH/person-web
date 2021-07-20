@@ -1,5 +1,6 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
     <title>People-Test</title>
 </head>
 <body>
@@ -10,9 +11,9 @@
 
 </div>
 <main>
-    <form action="#" th:action="@{/delete-person}"  method="post">
-        <p>id: <input type="text" th:value="${id}" /></p>
-        <p><input type="submit" value="Submit" />
+    <form th:action="@{/delete-person}"  method="post">
+        <p>id:<input type="text" th:value="${id}" name="id"/></p>
+        <input type="submit" />
     </form>
 
 </main>

@@ -1,4 +1,6 @@
 package uk.gov.companieshouse.personweb.personweb.model;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDate;
 public class Person {
     private String id;
@@ -8,6 +10,7 @@ public class Person {
     private String formerName;
     private String country;
     private String nationality;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate dob;
     private String occupation;
     private Address address;

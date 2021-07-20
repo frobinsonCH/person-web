@@ -1,0 +1,53 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <link th:href="@{/css/styles.css}" rel="stylesheet"/>
+    <title>Person</title>
+</head>
+<body>
+<header th:replace="fragments/header"></header>
+<div th:replace="fragments/navbar"></div>
+<main>
+    <p>
+        This is where the details of the people will be
+    </p>
+    <table>
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Forename(s)</th>
+            <th>Surname</th>
+            <th>Former Name(s)</th>
+            <th>Country</th>
+            <th>Nationality</th>
+            <th>Date of Birth</th>
+            <th>Occupation</th>
+            <th>House Num or Name</th>
+            <th>Street</th>
+            <th>Town</th>
+            <th>County</th>
+            <th>Postcode</th>
+            <th>Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${person?.id}" />
+            <td th:text="${person?.forename}" />
+            <td th:text="${person?.surname}" />
+            <td th:text="${person?.formerName}" />
+            <td th:text="${person?.country}" />
+            <td th:text="${person?.nationality}" />
+            <td th:text="${person?.dob}" />
+            <td th:text="${person?.occupation}" />
+            <td th:text="${person?.address?.houseNum}" />
+            <td th:text="${person?.address?.street}" />
+            <td th:text="${person?.address?.county}" />
+            <td th:text="${person?.address?.postcode}" />
+            <td th:text="${person?.address?.country}" />
+        </tr>
+        </tbody>
+    </table>
+</main>
+<footer th:replace="fragments/footer"></footer>
+</body>
+</html>

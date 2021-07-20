@@ -31,7 +31,20 @@ public class PersonService {
         return restTemplate.postForEntity("Http://localhost:8080/add-person",entity,Person.class);
     }
     public ResponseEntity<HttpStatus> deletePerson(String id){
-        HttpEntity<String> entity = new HttpEntity<>(id);
-        return restTemplate.exchange("Http://localhost:8080/delete-person", HttpMethod.DELETE, entity, HttpStatus.class);
+        HttpEntity<String> entity = new HttpEntity<>("");
+        return restTemplate.exchange("Http://localhost:8080/delete-person/"+id, HttpMethod.DELETE, entity, HttpStatus.class);
+    }
+
+    public ResponseEntity<Person> getPersonById(String id){
+        HttpEntity<String> entity = new HttpEntity<>("");
+        return restTemplate.getForEntity("Http://localhost:8080/person/"+id,Person.class,entity);
+    }
+
+    public ResponseEntity<Person> replacePersonById(Person person){
+        var id = person.getId();
+        HttpEntity<Person> entity = new HttpEntity<>(person);
+        return restTemplate.exchange("Http://localhost:8080/replace-person/"+id, HttpMethod.PUT, entity, Person.class);
+
+
     }
 }

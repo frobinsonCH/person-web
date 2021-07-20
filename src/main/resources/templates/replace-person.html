@@ -1,13 +1,14 @@
 <html xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <link th:href="@{/css/styles.css}" rel="stylesheet"/>
-    <title>Add Person</title>
+    <title>Replace Person</title>
 </head>
 <body>
 <header th:replace="fragments/header"></header>
 <div th:replace="fragments/navbar"> </div>
 <main>
-    <form action="#" th:action="@{/add-person}" th:object="${person}" method="post">
+    <form action="#" th:action="@{/replace-person}" th:object="${person}" method="post">
+        <p>ID: <input type="text" th:field="*{id}" /></p>
         <p>Forename: <input type="text" th:field="*{forename}" /></p>
         <p>Surname: <input type="text" th:field="*{surname}" /></p>
         <p>Former Name(s): <input type="text" th:field="*{formerName}" /></p>
